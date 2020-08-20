@@ -1,0 +1,491 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    overflow: hidden;
+    display: block;
+}
+
+div#mainPage{
+    min-height: 100vh;
+    position: relative;
+        border-bottom: thin solid black;
+}
+
+/* To pozwala zmienić transparentność obrazka tła na 0.5*/
+
+div#mainPage::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left:0;
+    top: 0;
+    background: url('img/rower.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+    opacity: 1;
+}
+
+div#oNas, div#oferta{ 
+    min-height: 100vh;
+    background-color:#646363;
+}
+
+div#kontakt {
+    min-height: 100vh;
+    background: url(img/kontakt.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center bottom;
+        border-bottom: thin solid black;
+}
+    
+div#foto {
+    padding: 10px;width: 80%;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: black;
+}
+
+div#foto img{
+    width: 40%;
+    float: left;
+    padding-right: 120px;
+}
+
+div#logo img {
+    height: 150px;
+    position: fixed;
+    top:0;
+    left: 0;
+    padding: 5px;
+    z-index: 3;
+    transition: 1s ease;
+    border-radius:50%;
+}
+
+div#logo img:hover{
+    transform: rotate(-360deg);
+}
+
+.header {
+    display: inline-flex;
+    height: 150px;
+    width: 100%;
+    margin: 0 0 0 150px;
+    padding: 0 0 0 20px;
+    letter-spacing: 3px;
+    font-size: 3rem;
+    line-height: 3;
+    top: 0;
+    left: 160px;
+    z-index: 1;
+    transition: 0.5s ease;
+    background-color: #646363;
+}
+
+nav.header {
+    background-color: transparent;  
+}
+
+nav {
+    display:flex; 
+}
+
+#hamburger{
+    display:none;
+}
+
+#hamburger:hover{
+    cursor: pointer;
+}
+
+.header li {
+    display: inline;
+    position: relative; /* bez tego elementy stają się transparentne na podstawie podanego opacity 0.5 w div#mainPage::before */
+    padding: 0 20px 0 0px;
+}
+
+.header li:hover {
+    border-bottom: 2px black solid;
+    cursor: pointer;
+}
+.header#header_kontakt{
+    background-color:transparent;
+}
+
+body{
+    height: 400vh;
+    font-family: 'Bebas Neue', cursive; 
+}
+
+h1 {
+    position: relative;
+    left: 5%;
+    top: 25%;
+    font-size:4rem;
+    text-align: left;
+    letter-spacing: 10px;
+}
+
+h2 {
+    position: relative;
+    left: 7.2%;
+    top: 35%;
+    font-size:2rem;
+    letter-spacing: 10px;
+}
+
+/* Tabela z ofertą */
+
+table {
+    margin: 0px auto 50px auto;
+    padding: 20px;
+    width: 80%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5;
+    border: 2px solid black;
+    border-collapse: collapse;
+    background: silver;
+    color: #37130c;
+    border: 3px solid black;
+}
+
+table caption {
+    color: #ffffff;
+    font-size: 2rem
+}
+
+table td, th {
+    border: thin solid #646363;
+}
+
+table th span#little {
+    font-size: 0.7rem;
+}
+
+ul#tabelka {
+    margin: 0 auto;
+    padding: 10px;
+    min-width: 300px;
+    width: 30%;
+    text-align: center;
+    font-size: 1.4rem;
+    color: white;
+    line-height: 1.6rem;
+    list-style-type: none;
+    background-color:black;
+    opacity: 0.8
+}
+
+.bold{
+    font-weight:bold;
+    font-size: 1.8rem
+}
+
+li#light{
+    font-weight:lighter;
+}
+
+#cena {
+    border-top: 2px solid black
+}
+
+table tr td#contactUs{
+    transition: 0.5s ease;
+}
+
+table tr td#contactUs:hover{
+    cursor: pointer;
+    background-color:#ffffff;
+}
+
+th {
+    font-weight: normal;
+}
+
+span.th_bold{
+    font-weight: bold;
+}
+
+/* Cytat */
+
+h4 {
+    font-size: 3rem;
+    font-family: Trocchi, sans-serif;
+    font-style:italic;
+    color: #ffffff;
+    text-align: center;
+}
+
+h5 {
+    font-size: 2rem;
+    font-style:italic;
+    color: #ffffff;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+/* Footer */
+
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    background-color: #646363;
+    font-family: 'Bebas Neue', cursive; 
+    font-size: 1.5rem;
+    color: #ffffff;
+    z-index: 10;
+    }
+
+footer a{
+    display: inline-flex;
+    color: inherit;
+    letter-spacing: 1rem;
+    text-decoration:none;
+}
+
+footer p{
+    display: inline-flex;
+    text-align: center;
+}
+
+footer div#socialMedia{
+    display: inline-block;
+    text-align: right;
+    width:32%;
+}
+
+footer div#footer_1 {
+    display:inline-block;
+    text-align: left;
+    width:33%;
+}
+
+footer div#footer_2 {
+    display: inline-block;
+    text-align: center;
+    width:33%;
+}
+
+/* Strzałka do scrollowania w dół + animacja */
+
+#arrow {
+    width: 48px;
+    height: 48px;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.6rem;
+    text-align: center;
+    text-shadow: 0px 20px 0 black, 0px 40px 0 black;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+
+#arrow:hover{
+        text-shadow: 0px 20px 0 black, 0px 40px 0 black;
+    color:black;
+    background-color: white;
+    cursor: pointer;
+}
+
+#arrow_up {
+    margin-top:20px;
+    width: 48px;
+    height: 48px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: relative;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.6rem;
+    text-align: center;
+    text-shadow: 0px 20px 0 white, 0px 40px 0 white;
+    overflow: hidden;
+    transition: 0.5s ease;
+    background-color: black;
+    opacity: 0.8
+}
+
+#arrow_up:hover{
+    text-shadow: 0px 20px 0 black, 0px 40px 0 black, 0px 5px 0 black;
+    background-color: white;
+    border: 1px solid black;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.fa-chevron-down {
+    animation: arrow 1.5s infinite linear;
+}
+.fa-chevron-up {
+    animation: arrow_up 1.5s infinite linear;
+    color:#ffffff;
+}
+
+@keyframes arrow {
+    0% {transform: translateY(-80px)}
+    50% {transform:translateY(0)}
+    100% {transform:translateY(80px)}
+}
+
+@keyframes arrow_up {
+    0% {transform: translateY(80px)}
+    50% {transform:translateY(0)}
+    100% {transform:translateY(-80px)}
+}
+
+
+/* FLEX W SEKCJI O NAS*/
+
+#flex-container{
+    margin: 20px;
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #6f6f70;
+    border: 2px solid black;
+}
+
+#flex-container article{
+    background: #6f6f70;;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 0 1 32%;
+    min-width: 250px;
+    text-align: center;
+}
+
+#flex-container article p{
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+#flex-container article img{
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    transition: ease 0.5s;
+}
+
+#flex-container article img:hover{
+transform: rotate(-10deg) scale(1.1);
+margin-bottom: 35px;
+}
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width:575px){
+    .header li#oNas, .header li#oferta, .header li#kontakt{
+        display: flex;
+        line-height:1;
+        padding: 0;
+        font-size: 2rem;
+        margin-bottom: 6px;
+    }
+    .header li#oNas{
+        margin-top: 25px;
+    }
+    /* ewentualne menu hamburgerowe */
+    /*
+    .header li#hamburger {
+        display: flex;
+        position: absolute;
+        left: 180px;
+        top: 55px;
+    }
+    */
+    div#mainPage::before{
+        opacity:0.5;
+        right: -150px;
+    }
+    h1, h2 {
+        left: 0;
+        text-align: center;
+        padding: 5px 30px;
+    }
+    h4 {
+        font-size: 1.7rem;
+    }
+    h5 {
+        font-size: 1.3rem;
+    }
+    div#logo img {
+        position: absolute;
+    }
+    div.header {
+        margin:0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    footer {
+        display:block;
+        font-size: 1.2rem
+    }
+    footer div#footer_1 {
+        width: 48%;
+    }
+    footer div#footer_2 {
+        width: 48%;
+    }
+    footer div#socialMedia{
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    /* ustawia flexa w sekcji o nas */
+    #flex-container article{
+        flex: 0 1 100%;
+    }
+    
+}
+
+@media screen and (min-width: 800px) {
+    table {
+    font-size: 1.5rem;
+    }
+    table caption {
+    font-size: 3rem;
+    }
+    table th span#little {
+    font-size: 1.2rem;
+    }
+
+}
+
+@media (min-width:992px){
+    
+    }
+
+
+@media (min-width:1200px){
+    
+    }
+
+
+
+
+
